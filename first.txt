@@ -1,0 +1,6 @@
+class Trasaction
+	string Payer[10],Payee[10];
+	int amount;
+
+class Block
+	
