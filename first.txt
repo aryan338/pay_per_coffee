@@ -1,6 +1,14 @@
+#include <iotream>
+#include "pichosha.h"
 class Trasaction
 	string Payer[10],Payee[10];
 	int amount;
 
 class Block
-	
+	string prev_hash, cur_hash;
+
+int main()
+{
+	long 
+}
+
