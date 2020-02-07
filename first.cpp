@@ -1,5 +1,6 @@
 #include <iotream>
-#include "pichosha.h"
+#include <pichosha.h>
+using namespace std
 class Trasaction
 	string Payer[10],Payee[10];
 	int amount;
