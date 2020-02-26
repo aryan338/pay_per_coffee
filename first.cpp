@@ -1,5 +1,5 @@
 #include <iotream>
-#include "pichosha.h"
+#include "../picosha2.h"
 using namespace std;
 class Trasaction
 public:
