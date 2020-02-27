@@ -1,4 +1,7 @@
 #include <iotream>
+#include <vector>
+#include <string>
+#include <fstream>
 #include "../picosha2.h"
 using namespace std;
 class Trasaction
@@ -19,11 +22,15 @@ int main()
 	{
 	        cout<<"\nEnter the payee id, recipient id and the amount\n";
 	        cin>>Block_1.Entry[i].Payer>>Block_1.Entry[i].Payee>>Block_1.Entry[i].amount;
-		picosha2::hash256_hex_str(dat,dat);
-		dat=dat+Block_1.Entry[i].Payee;
-		picosha2::hash256_hex_str(dat,dat);
-		dat=dat+Block_1.Entry[i].amount;
-		picosha2::hash256_hex_str(dat,dat);
+		
+		picosha2::hash256_hex_str(Block_1.Entry[i].Payer,Block_1.Entry[i].Payer);
+		picosha2::hash256_hex_str(Block_1.Entry[i].Payee,Block_1.Entry[i].Payee);
+		
+		Block_1.Entry[i].amount=to_string(Block_1.Entry[i].amount);
+		picosha2::hash256_hex_str(Block_1.Entry[i].amount,Block_1.Entry[i].amount);
+		
+		dat=dat+Block_1.Entry[i].Payer+Block_1.Entry[i].payee+Block_1.Entry[i].amount;
+		picosha2::hash256_hex_string(dat,dat);
 	}
 	cur_hash=dat;
 }
