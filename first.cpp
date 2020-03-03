@@ -1,4 +1,4 @@
-#include <iotream>
+#include <iostream>
 #include <vector>
 #include <string>
 #include <fstream>
@@ -13,6 +13,14 @@ class Block
 public:
         string prev_hash, cur_hash;
 	Transaction Entry[5];
+
+void create_file(Block* Block_1)
+{
+	ofstream myfile;
+	myfile.open("Blocks.dat",ios::in|ios::binary)
+	myfile.write((Block*)Block_1,sizeof(Block_1));
+	myfile.close();
+}
 
 int main()
 {
