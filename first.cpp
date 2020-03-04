@@ -20,7 +20,7 @@ public:
 void create_file(Block* Block_1)
 {
 	ofstream myfile;
-	myfile.open("Blocks.txt",ios::in|ios::binary);
+	myfile.open("Blocks.dat",ios::in|ios::binary);
 	myfile.write((char*)Block_1,sizeof(Block_1));
 	myfile.close();
 }
@@ -32,7 +32,7 @@ int main()
 	string dat=Block_1.prev_hash;
         for(int i=0;i<5;i++)
 	{
-	        cout<<"\nEnter the payee id, recipient id and the amount\n";
+	        cout<<"\nEnter the Payer ID, Payee ID and the Amount\n";
 	        cin>>Block_1.Entry[i].Payer>>Block_1.Entry[i].Payee>>amount;
 		
 		picosha2::hash256_hex_string(Block_1.Entry[i].Payer,Block_1.Entry[i].Payer);
@@ -46,9 +46,11 @@ int main()
 	}
 	Block_1.cur_hash=dat;
 
+	int flag;
 	for(int i=0;i<5;i++)
 	{
-		cout<<Block_1.Entry[i].Payer<<"/n"<<Block_1.Entry[i].Payee<<"/n"<<Block_1.Entry[i].amount<<"/n";
+		cout<<Block_1.Entry[i].Payer<<"\n"<<Block_1.Entry[i].Payee<<"\n"<<Block_1.Entry[i].amount<<"\n";
 	}
+	cin>>flag;	
 }
 
