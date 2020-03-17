@@ -20,7 +20,7 @@ public:
 void create_file(Block* Block_1)
 {
 	ofstream myfile;
-	myfile.open("Blocks.dat",ios::in|ios::binary);
+	myfile.open("Blocks.dat",ios::out|ios::binary);
 	myfile.write((char*)Block_1,sizeof(Block_1));
 	myfile.close();
 }
@@ -52,5 +52,7 @@ int main()
 		cout<<Block_1.Entry[i].Payer<<"\n"<<Block_1.Entry[i].Payee<<"\n"<<Block_1.Entry[i].amount<<"\n";
 	}
 	cin>>flag;	
+
+	create_file(&Block_1);
 }
 
